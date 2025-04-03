@@ -13,3 +13,4 @@ VAT is a tool for visually assessing whether clusters exist in a dataset before 
 
 ```bash
 pip install -r requirements.txt
+
