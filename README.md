@@ -43,4 +43,32 @@ The student dataset contains:
 ## Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/vat-cluster-tendency.git
+
+# Navigate to the project directory
+cd vat-cluster-tendency
+
+# Install required dependencies
 pip install -r requirements.txt
+```
+
+## Usage Example
+
+```python
+import numpy as np
+from vat_module import compute_dissimilarity_matrix, vat_ordering, display_vat
+
+# Example dataset (replace with your own)
+from sklearn.datasets import load_iris
+X = load_iris().data
+
+# Step 1: Compute dissimilarity matrix
+R = compute_dissimilarity_matrix(X)
+
+# Step 2: Apply VAT ordering
+P, R_ordered = vat_ordering(R)
+
+# Step 3: Display VAT image
+display_vat(R_ordered)
+```
