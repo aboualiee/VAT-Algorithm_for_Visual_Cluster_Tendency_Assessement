@@ -44,7 +44,7 @@ The student dataset contains:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/vat-cluster-tendency.git
+git clone https://github.com/aboualiee/VAT-Algorithm_for_Visual_Cluster_Tendency_Assessement.git
 
 # Navigate to the project directory
 cd vat-cluster-tendency
@@ -69,6 +69,29 @@ R = compute_dissimilarity_matrix(X)
 # Step 2: Apply VAT ordering
 P, R_ordered = vat_ordering(R)
 
-# Step 3: Display VAT image
-display_vat(R_ordered)
+# Step 3: ## Visualize both matrices side-by-side for comparison
+
+# Visualize the VAT ordered dissimilarity matrix
+plt.figure(figsize=(8, 6))
+plt.imshow(R_ordered, cmap='gray_r', interpolation='nearest')
+plt.title("VAT Ordered Dissimilarity Matrix")
+plt.colorbar()
+plt.show()
+
+# Visualize the VAT ordered dissimilarity matrix
+plt.figure(figsize=(16, 6))
+
+plt.subplot(1, 2, 1)
+plt.imshow(R, cmap='gray_r', interpolation='nearest')
+plt.title("Original Dissimilarity Matrix")
+plt.colorbar()
+
+plt.subplot(1, 2, 2)
+plt.imshow(R_ordered, cmap='gray_r', interpolation='nearest')
+plt.title("VAT Ordered Dissimilarity Matrix")
+plt.colorbar()
+
+plt.tight_layout()
+plt.savefig("../results/vat_iris_example.png", dpi=300, bbox_inches='tight')
+plt.show()
 ```
